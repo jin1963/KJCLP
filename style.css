@@ -1,0 +1,63 @@
+:root{
+  --bg:#000;
+  --fg:gold;
+  --fg-dim:#bfa53a;
+  --muted:#aaa;
+  --panel:#111;
+  --border:#444;
+  --danger:#ff4d4f;
+  --ok:#28c76f;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif}
+
+.container{
+  max-width:620px;
+  margin:40px auto;
+  padding:0 16px 40px;
+  text-align:center;
+}
+
+h1{margin:12px 0 8px;font-size:28px}
+hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+
+label{display:block;margin:10px 0 6px;color:var(--fg-dim);text-align:left}
+
+input[type="text"],
+input[type="number"]{
+  width:100%;
+  padding:12px 14px;
+  margin:6px 0 10px;
+  font-size:16px;
+  color:#000;
+  background:#fff;
+  border-radius:6px;
+  border:1px solid #ddd;
+  outline:none;
+}
+
+button{
+  display:inline-block;
+  padding:12px 18px;
+  margin:6px 4px;
+  font-size:16px;
+  background:var(--fg);
+  color:#000;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+button:hover{opacity:.9}
+button[disabled], .disabled{opacity:.5;pointer-events:none}
+
+#status.ok{color:var(--ok)}
+#status.err{color:var(--danger)}
+
+#quoteBox{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:10px 12px;
+  margin-top:8px;
+}
