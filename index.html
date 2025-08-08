@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>KJC LP Auto Stake</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>💧 KJC LP Auto Staking</h1>
+
+    <div class="card">
+      <div class="row">
+        <button id="btnConnect">🔗 เชื่อม MetaMask (BSC)</button>
+        <div id="status" class="mono muted">ยังไม่เชื่อมต่อ</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>👥 Referral</h2>
+      <div class="row">
+        <input id="refAddress" type="text" placeholder="Referrer Address (0x...)" />
+        <button id="btnSetRef">📌 ตั้งค่า Referrer</button>
+      </div>
+      <div class="row">
+        <button id="btnClaimRef">🎁 เคลม Referral Rewards</button>
+        <div class="mono" id="uiRefRewards">-</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🧩 Buy & Stake (USDT → KJC → LP)</h2>
+      <div class="row">
+        <input id="usdtAmount" type="number" min="0" step="0.000001" placeholder="จำนวน USDT เช่น 50" />
+        <button id="btnBuyStake">🚀 Buy & Auto-Add LP & Stake</button>
+      </div>
+      <div class="muted">* ระบบจะอนุมัติ USDT ให้สัญญาอัตโนมัติถ้ายังไม่เคยอนุมัติ</div>
+    </div>
+
+    <div class="card">
+      <h2>📊 Staking ของฉัน (แยกโพสิชัน)</h2>
+      <div class="row">
+        <button id="btnRefresh">🔄 รีเฟรช</button>
+        <button id="btnClaimStake">🎁 เคลมรางวัล Staking</button>
+      </div>
+      <div id="stakesBox" class="mono small"></div>
+    </div>
+
+    <div class="card">
+      <h2>⬇️ ถอน LP</h2>
+      <div class="row">
+        <input id="idx" type="number" min="0" step="1" placeholder="index ของโพสิชัน" />
+        <button id="btnWithdrawByIndex">ถอนรายโพสิชัน</button>
+      </div>
+      <div class="row">
+        <button id="btnWithdrawAll">ถอนที่ปลดล็อกทั้งหมด</button>
+      </div>
+    </div>
+
+    <p class="muted">
+      สัญญา: <span class="mono" id="contractAddr"></span><br/>
+      เครือข่าย: BSC Mainnet
+    </p>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="wallet.js"></script>
+  <script src="staking.js"></script>
+</body>
+</html>
